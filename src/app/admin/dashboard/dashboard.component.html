@@ -1,0 +1,20 @@
+<button [routerLink]="['/admin/products/add']">Thêm</button>
+<table class="col-span-12 w-full">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Tên</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of Products">
+      <td>{{p.id}}</td>
+      <td>{{p.name}}</td>
+      <td>
+        <button (click)="remove(p.id!)">del</button>
+        <a [routerLink]="['/admin/products/' , p?.id , 'edit']">Sửa</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

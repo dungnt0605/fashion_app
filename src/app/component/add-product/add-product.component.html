@@ -1,0 +1,11 @@
+<!-- {{ product | json }} -->
+<hr />
+<!-- <button type="submit" class="border  px-7 py-3 bg-orange-400 rounded-full text-white  ">Thêm</button> -->
+<form #productForm="ngForm" (submit)="addProduct(productForm)" class="my-11 *:w-full *:my-2 *:rounded-md px-5 *:px-3">
+  <h1 class="text-center font-bold text-2xl">Thêm sp</h1>
+  <input class="border border-gray-700  " type="text" ngModel name="name" placeholder="Name" />
+  <input class="border border-gray-700  " type="text" ngModel name="price" placeholder="Price" />
+  <input class="border border-gray-700  " type="text" ngModel name="description" placeholder="Description" />
+  <input class="border border-gray-700  " type="text" ngModel name="imageUrl" placeholder="ImageUrl" />
+  <button type="submit" class="border border-transparent bg-black text-white py-2">Thêm</button>
+</form>

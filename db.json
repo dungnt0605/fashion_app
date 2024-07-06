@@ -1,0 +1,12 @@
+{
+  "Products": [
+    {
+      "id": "2",
+      "name": "Product 4",
+      "price": 20,
+      "imageUrl": "https://picsum.photos/seed/picsum/500/300",
+      "description": "Product description"
+    }
+  ],
+  "users": []
+}

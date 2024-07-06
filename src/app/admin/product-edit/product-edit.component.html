@@ -1,0 +1,28 @@
+<!-- <h2>Edit Item</h2>
+<form #productForm="ngForm" (submit)="updateProduct(productForm)">
+  <div>
+    <input type="hidden" [(ngModel)]="Product.id" name="id">
+    <label for="name">Name:</label>
+    <input class="border border-gray-700  " id="name" [(ngModel)]="Product.name" name="name">
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <textarea class="border border-gray-700  " id="description" [(ngModel)]="Product.description"
+      name="description"></textarea>
+  </div>
+  <button type="submit">edit</button>
+</form>
+<button [routerLink]="['/admin']">Cancel</button> -->
+
+<form [formGroup]="productForm" (submit)="onSubmit()" class="w-1/4 m-auto">
+  Name : <input type="text"
+    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+    formControlName="name">
+  Image : <input type="text"
+    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+    formControlName="imageUrl">
+  Description : <input type="text"
+    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+    formControlName="description">
+  <button type="submit">Sửa</button>
+</form>
