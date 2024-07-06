@@ -14,6 +14,6 @@ Products.get("/products", GetAllProduct);
 Products.get("/products/:slug", GetByIdProduct);
 Products.post("/products", uploadCloud.any(), CreateProduct);
 Products.put("/products/:slug", UpdateProduct);
-Products.delete("/products/:slug", RemoveProduct);
+Products.delete("/products/:id", RemoveProduct);
 
 export default Products;

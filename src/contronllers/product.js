@@ -70,7 +70,7 @@ export const UpdateProduct = async (req, res) => {
 
 export const RemoveProduct = async (req, res) => {
   try {
-    const product = await Products.findOneAndDelete({ slug: req.params.slug });
+    const product = await Products.findByIdAndDelete(req.params.id);
 
     return res.status(StatusCodes.OK).json(product);
   } catch (error) {
