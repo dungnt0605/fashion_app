@@ -1,8 +1,11 @@
 interface Product {
-  id?: number;
+  id?: string;
+  slug: string;
   name?: string;
   price?: Number;
-  imageUrl?: string;
+  discount: number;
+  category?: string;
+  gallery?: string;
   description?: string;
   // isStatus?: boolean;
 }

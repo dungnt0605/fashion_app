@@ -1,5 +1,60 @@
-<form #productAdd="ngForm" (submit)="addProduct(productAdd)">
-  name : <input type="text" ngModel name="name">
-  Description : <input type="text" ngModel name="description">
-  <button type="submit">add</button>
+<form [formGroup]="form" (ngSubmit)="addProduct()" class="max-w-sm mx-auto">
+  <h2 class="text-center my-6 font-bold text-2xl">Sửa Sản Phẩm</h2>
+  <div class="mb-5">
+    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+    <input type="name" id="name" formControlName="name"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+      required />
+    <div *ngIf="form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)"
+      class="*:text-red-700">
+      <span *ngIf="form.get('name')?.hasError('required')">Tên SP không đc để trống</span>
+      <span *ngIf="form.get('name')?.hasError('minlength')">Tên SP phải có ít nhất 3 ký tự</span>
+    </div>
+  </div>
+  <div class="mb-5">
+    <label for="gallery" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gallery</label>
+    <input type="text" id="gallery" formControlName="gallery"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+      required />
+    <div *ngIf="form.get('gallery')?.invalid && (form.get('gallery')?.dirty || form.get('gallery')?.touched)"
+      class="*:text-red-700">
+      <span *ngIf="form.get('gallery')?.hasError('required')">Ảnh không đc để trống</span>
+    </div>
+  </div>
+  <div class="mb-5">
+    <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
+    <input type="text" id="category" formControlName="category"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+      required />
+    <div *ngIf="form.get('category')?.invalid && (form.get('category')?.dirty || form.get('category')?.touched)"
+      class="*:text-red-700">
+      <span *ngIf="form.get('category')?.hasError('required')">Mục không đc để trống</span>
+    </div>
+  </div>
+  <div class="mb-5">
+    <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+    <input type="number" id="price" formControlName="price"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+      required />
+    <div *ngIf="form.get('price')?.invalid && (form.get('price')?.dirty || form.get('price')?.touched)"
+      class="*:text-red-700">
+      <span *ngIf="form.get('price')?.hasError('required')">Giá không đc để trống</span>
+    </div>
+  </div>
+  <div class="mb-5">
+    <label for="discount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Discount</label>
+    <input type="number" id="discount" formControlName="discount"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+      required />
+
+  </div>
+
+  <div class="mb-5">
+    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+    <textarea name="description" id="description" formControlName="description"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "></textarea>
+
+  </div>
+  <button type="submit"
+    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none ">Submit</button>
 </form>

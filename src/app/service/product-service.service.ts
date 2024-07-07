@@ -11,20 +11,23 @@ export class ProductServiceService {
   getAll(): Observable<Product[]> {
     return this.http.get<Product[]>('http://localhost:8080/api/products');
   }
-  getById(id: number | string): Observable<Product> {
-    return this.http.get<Product>('http://localhost:3000/Products/' + id);
+  getById(slug: number | string): Observable<Product> {
+    return this.http.get<Product>('http://localhost:8080/api/products/' + slug);
   }
   addProduct(product: Product) {
-    return this.http.post<Product>('http://localhost:3000/Products/', product);
+    return this.http.post<Product>(
+      'http://localhost:8080/api/products',
+      product
+    );
   }
-  removeItem(id: any): Observable<Product | {}> {
+  removeItem(slug: any): Observable<Product | {}> {
     return this.http.delete<Product | {}>(
-      `http://localhost:3000/Products/${id}`
+      `http://localhost:8080/api/products/${slug}`
     );
   }
   updateProduct(product: Product): Observable<Product> {
     return this.http.put<Product>(
-      `http://localhost:3000/Products/${product.id}`,
+      `http://localhost:8080/api/products/${product.slug}`,
       product
     );
   }
